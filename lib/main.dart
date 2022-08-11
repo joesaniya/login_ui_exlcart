@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import './login_demo.dart';
+import 'package:login_demo/profile.dart';
 import 'login_ui/login-ui-design.dart';
 
 // void main() {
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:LoginDesign(),
+      // home: Profile(),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:login_demo/login_ui/login-ui-design.dart';
+import 'package:login_demo/profile.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({Key? key}) : super(key: key);
@@ -176,6 +177,14 @@ class _SignUpState extends State<SignUp> {
           await _auth.currentUser!.updateProfile(displayName: _name);
           log('updated');
           log(user.toString());
+          Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Profile()),
+          );
+          // Navigator.of(context).pushAndRemoveUntil
+          // (
+          //   MaterialPageRoute(builder: (context) =>Profile()), 
+          //   (Route<dynamic> route) => false);
         }
       }
       catch(e)

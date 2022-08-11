@@ -22,6 +22,7 @@ class _LoginDesignState extends State<LoginDesign> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView
       (
+        physics: BouncingScrollPhysics(),
         child: Container
         (
           child: Padding(
@@ -256,49 +257,98 @@ class _LoginDesignState extends State<LoginDesign> {
                           height: 30,
                         ),
 
-                        Padding
-                        (
-                          padding:EdgeInsets.only(bottom: 10,left: 20),
-                          child: Container(
-                            height: 20,
-                            width: double.infinity,
-                            color: Colors.transparent,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text('Don\'t have an account?',
-                                style: TextStyle
-                                (
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                        // Padding
+                        // (
+                        //   padding:EdgeInsets.only(bottom: 10,left: 20),
+                        //   child: Container(
+                        //     height: 20,
+                        //     width: double.infinity,
+                        //     color: Colors.transparent,
+                        //     child: Row(
+                        //       crossAxisAlignment: CrossAxisAlignment.center,
+                        //       mainAxisAlignment: MainAxisAlignment.center,
+                        //       children: [
+                        //         Text('Don\'t have an account?',
+                        //         style: TextStyle
+                        //         (
+                        //           fontSize: 16,
+                        //           fontWeight: FontWeight.bold,
+                        //         ),
                                 
-                                ),
-                                SizedBox
-                                (
-                                  width: 5,
-                                ),
-                                GestureDetector(
-                                  onTap: ()
-                                  {
-                                    log('Signup button');
-                                    // get.to()=>g
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
-                                  },
-                                  child: Text('Signup',
-                                  style: TextStyle
-                                  (
-                                    color: Colors.purple,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
+                        //         ),
+                        //         SizedBox
+                        //         (
+                        //           width: 5,
+                        //         ),
+                        //         GestureDetector(
+                        //           onTap: ()
+                        //           {
+                        //             log('Signup button');
+                        //             // get.to()=>g
+                        //             Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                        //           },
+                        //           child: Text('Signup',
+                        //           style: TextStyle
+                        //           (
+                        //             color: Colors.purple,
+                        //             fontSize: 16,
+                        //             fontWeight: FontWeight.w500,
+                        //           ),
+                        //           ),
+                        //         )
+                        //       ],
+                        //     ),
+                        //   ),
+                        // ),
+
+                        SizedBox(height: 16,),
+
+                              //connect google
+
+                              Container
+                              (
+                                  height: 50,
+                                  width: double.infinity,
+                                  child: FlatButton(
+                                    onPressed: (){},
+                                    // onPressed: googleSignIn,
+                                    color: Colors.indigo.shade50,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Image.asset('assets/images/google.png',height: 18,width: 18,),
+                                        SizedBox(width: 10,),
+                                        Text("Connect with Google",style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold),),
+                                      ],
+                                    ),
                                   ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                                ),
+
+                                SizedBox(height: 16,),
+
+                                //account design
+                                Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text("Don't have an account?",style: TextStyle(fontWeight: FontWeight.bold,color:Colors.grey.shade400),),
+                          SizedBox(width: 5,),
+                          GestureDetector(
+                            // onTap: navigateToSignUp,
+                            onTap: ()
+                            {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                            },
+                            child: Text("Sign up",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple),),
+                          )
+                        ],
+                      ),
+                    )
+
 
                         // RichText
                         // (
