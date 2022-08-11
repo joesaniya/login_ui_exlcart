@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:login_demo/Signup_ui/Signup.dart';
 
 class LoginDesign extends StatefulWidget {
   LoginDesign({Key? key}) : super(key: key);
@@ -17,7 +18,8 @@ class _LoginDesignState extends State<LoginDesign> {
   Widget build(BuildContext context) {
     return Scaffold
     (
-      backgroundColor: Colors.lightBlue.shade100,
+      // backgroundColor: Colors.lightBlue.shade100,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView
       (
         child: Container
@@ -280,9 +282,11 @@ class _LoginDesignState extends State<LoginDesign> {
                                 GestureDetector(
                                   onTap: ()
                                   {
-                                    log('login button');
+                                    log('Signup button');
+                                    // get.to()=>g
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
                                   },
-                                  child: Text('Login',
+                                  child: Text('Signup',
                                   style: TextStyle
                                   (
                                     color: Colors.purple,
