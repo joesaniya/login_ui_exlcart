@@ -177,14 +177,14 @@ class _SignUpState extends State<SignUp> {
           await _auth.currentUser!.updateProfile(displayName: _name);
           log('updated');
           log(user.toString());
-          Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Profile()),
-          );
-          // Navigator.of(context).pushAndRemoveUntil
-          // (
-          //   MaterialPageRoute(builder: (context) =>Profile()), 
-          //   (Route<dynamic> route) => false);
+          // Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => Profile()),
+          // );
+          Navigator.of(context).pushAndRemoveUntil
+          (
+            MaterialPageRoute(builder: (context) =>Profile()), 
+            (Route<dynamic> route) => false);
         }
       }
       catch(e)
@@ -350,7 +350,7 @@ class _SignUpState extends State<SignUp> {
                                               {
                                                 Navigator.push(
                                                       context,
-                                                      MaterialPageRoute(builder: (context) => LoginDesign()),
+                                                      MaterialPageRoute(builder: (context) => Login()),
                                                     );
                                               },
                                               child: Text("Login",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple),),
