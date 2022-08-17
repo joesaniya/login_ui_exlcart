@@ -50,7 +50,8 @@ class _ProfileState extends State<Profile> {
                           )
                         : CircleAvatar(
                             backgroundColor: Colors.transparent,
-                            child: Text(widget.user!.displayName![0],style: TextStyle(
+                            child: Text(widget.user!.email![0],
+                            style: TextStyle(
                                   fontSize: 28,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,

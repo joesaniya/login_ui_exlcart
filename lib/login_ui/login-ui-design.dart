@@ -38,7 +38,7 @@ class _LoginState extends State<Login> {
           email: _email.toString(), 
           password: _password.toString()
         );
-        log(maillogin.additionalUserInfo.toString());
+        log(maillogin.user.toString());
         // Navigator.push
         // (
         //   context, 
@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
         // );
         Navigator.of(context).pushAndRemoveUntil
           (
-            MaterialPageRoute(builder: (context) =>Profile()), 
+            MaterialPageRoute(builder: (context) =>Profile(user: maillogin.user,)), 
             (Route<dynamic> route) => false);
       }catch(e)
       {
@@ -111,7 +111,7 @@ class _LoginState extends State<Login> {
         log('sign in google');
         Navigator.of(context).pushAndRemoveUntil
           (
-            MaterialPageRoute(builder: (context) =>Profile()), 
+            MaterialPageRoute(builder: (context) =>Profile(user: user.user,)), 
             (Route<dynamic> route) => false);
         return user;
         // log(user.toString());
